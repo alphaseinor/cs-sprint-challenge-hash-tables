@@ -8,6 +8,17 @@ def finder(files, queries):
     """
     # Your code here
 
+    cache = {}
+    result = []
+
+    for path in files:
+        name = name.path.split('/')
+        if name not in cache:
+            cache[name] = [path]
+        else:
+            cache[name].append(path)
+        print(name)
+
     return result
 
 
