@@ -20,7 +20,9 @@ def finder(files, queries):
 
     for query in queries:
         if query in cache:
-            result.append(path)
+            #duplicates?
+            for path in cache[query]:
+                result.append(path)
 
     return result
 
