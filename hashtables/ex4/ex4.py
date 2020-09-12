@@ -4,6 +4,15 @@ def has_negatives(a):
     """
     # Your code here
 
+    cache = {}
+    result = []
+
+    for number in a:
+        if number not in cache:
+            cache[number] = number
+            if -number in cache: #didn't know -number could exist until this day... very cool!
+                result.append(abs(number)) #well... needs to be positive, so abs get a good workout
+
     return result
 
 
