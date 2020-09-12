@@ -4,6 +4,20 @@ def intersection(arrays):
     """
     # Your code here
 
+    cache = {}
+    result = []
+
+    
+    for number in arrays:
+        if number in cache:
+            cache[number] +=1
+        else:
+            cache[number] = 1
+
+
+        if cache[number] >= len(arrays):
+            result.append(number)
+        
     return result
 
 
