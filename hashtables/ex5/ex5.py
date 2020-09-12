@@ -17,7 +17,10 @@ def finder(files, queries):
             cache[name] = [path]
         else:
             cache[name].append(path)
-        print(name)
+
+    for query in queries:
+        if query in cache:
+            result.append(path)
 
     return result
 
