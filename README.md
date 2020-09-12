@@ -22,12 +22,39 @@ Commit your code regularly and meaningfully. This practice helps both you (in ca
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your answers beforehand.
 
-1. Hashing functions
-2. Collision resolution
-3. Performance of basic hash table operations
-4. Load factor
-5. Automatic resizing
-6. Various use cases for hash tables
+Hashing functions
+
+A hash is just encoded data of a fixed size from data that has a variable size. A hash function generates this encoded data. 
+This encoded data must be predictable. 
+If an identical input is entered, output from the first encoded data must match the second, or subsequent data
+Typically this is stored in a table that can be accessed directly as an O(n + a), which is as close to constant time as you can get. 
+
+Collision resolution
+
+A collision happens when two or more items have hashed to the same value, and then tried to be stored in the same location, If you have a collision, you can store this information in a list, or a linked list, there’s also other options of direct access (but has o(n log n) as a linked list in the end).  
+Different ways of hashing can reduce collision resolution assuming 
+the encoding is reversible
+the encoding is unique, or almost unique
+SHA based encryption typically will not have collisions with most strings, which is why encoding using a SHA based algorithm is popular with applications like github. 
+
+Load factor
+
+Load factor is just the number of buckets and the depth of the buckets, typically the ratio should be between .7 and .25 as per our instruction. 
+
+Performance of basic hash table operations
+
+The reason why I added the load factor previous to this section (unlike what’s in the sprint)
+resize is O(n) because it has to be rehashed
+put, delete is O(1), except where put needs to resize.
+
+
+Automatic resizing
+sometimes called dynamic resizing, as the load factor increases, the number of collisions will increase. once you have a collision, it will decrease the performance of the table. typically this is done by iterating over the old hash table and add each entry into a new table
+
+
+Various use cases for hash tables
+My favorite implementation of a hash table so far is git, however it’s also used in crypto. I would imagine databases use hashing as well for faster queries. 
+
 
 We expect you to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 

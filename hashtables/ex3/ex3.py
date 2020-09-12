@@ -4,6 +4,25 @@ def intersection(arrays):
     """
     # Your code here
 
+    temp = []
+    cache = {}
+    result = []
+
+    #need an array copy
+    for temparr in arrays:
+        temp.extend(temparr) #ah ha, hush that fuzz, add each array to the back of the list
+
+    #let's loop the temp
+    for number in temp:
+        if number in cache:
+            cache[number] +=1
+        else:
+            cache[number] = 1
+
+
+        if cache[number] >= len(arrays):
+            result.append(number)
+        
     return result
 
 

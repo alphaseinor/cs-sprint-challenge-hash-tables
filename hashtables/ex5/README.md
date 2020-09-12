@@ -13,6 +13,7 @@ paths = [
     "/bin/su"
 ]
 
+
 queries = [
     "ls",
     "foo.txt",
